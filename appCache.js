@@ -49,7 +49,7 @@ self.addEventListener('fetch', function(event) {
 });
 
 // период обновления кэша - одни сутки
-var MAX_AGE = 86400000;
+var MAX_AGE = 1000;
 
 self.addEventListener('fetch', function(event) {
 
