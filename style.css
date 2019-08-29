@@ -5,7 +5,7 @@
 /*блок для вопросов и ответов*/
 .container {
     min-width: 350px;
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
     background-color: #6892ff;
     padding: 20px;
@@ -26,19 +26,25 @@
     border-radius: 10px;
 }
 
+.answer_block{
+    display: grid;
+    align-items: center;
+
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 0.5fr);
+    grid-template-rows: repeat(2, 90px);
+
+    margin-top: 20px;
+}
+
 /*блок ответа*/
 .answer {
     background-color: #4863ae;
-    margin: 0 auto;
-    display: inline-block;
     border: 1px solid black;
     border-radius: 10px;
-    height: 70px;
-    width: 100px;
     text-align: center;
-    line-height: 70px;
-    font-size: 25px;
-    margin-bottom: 40px;
+    line-height: 90px;
+    font-size: 28px;
     outline: none;
 }
 
