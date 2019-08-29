@@ -14,6 +14,7 @@ self.addEventListener('activate', function(event) {
 var CACHE_NAME = 'app_serviceworker_v_1',
 // ссылки на кэшируемые файлы
     cacheUrls = [
+        '/test/',
         'appCache.js',
         'index.html',
         'style.css',
