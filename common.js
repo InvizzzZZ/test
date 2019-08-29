@@ -110,6 +110,7 @@ function createQuestion(question) {  //функция, отрисовывающ�
     answer1.addEventListener('click', checkAnswer, false); //вешаем слушатель клика на каждый блок с ответом
     answer2.addEventListener('click', checkAnswer, false);
     answer3.addEventListener('click', checkAnswer, false);
+    answer4.addEventListener('click', checkAnswer, false);
 }
 
 function checkAnswer(EO) {
@@ -134,6 +135,7 @@ function checkAnswer(EO) {
     answer1.removeEventListener('click', checkAnswer, false); // чтобы нельзя было кликать после первого клика
     answer2.removeEventListener('click', checkAnswer, false);
     answer3.removeEventListener('click', checkAnswer, false);
+    answer4.removeEventListener('click', checkAnswer, false);
 
     setTimeout(() => { //тайм-аут для отображения следующего вопроса
         while (container.firstChild) { // удаляем отрисованный вопрос
@@ -149,9 +151,11 @@ function checkAnswer(EO) {
             block.style.fontSize = '30px';
             block.style.lineHeight = 'initial';
             if (count === questions.length) {
-                block.textContent = `Игра окончена Ваш результат ${count} из ${questions.length}! \nВы молодец!`;
+                block.textContent = `Игра окончена Ваш результат ${count} из ${questions.length}!
+                Вы молодец!`;
             } else {
-                block.textContent = `Игра окончена Ваш результат ${count} из ${questions.length}.\nВ следующий раз будет лучше`;
+                block.textContent = `Игра окончена Ваш результат ${count} из ${questions.length}.
+                В следующий раз будет лучше`;
             }
             container.append(block);
             let button = document.createElement('button');
