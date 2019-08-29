@@ -14,6 +14,7 @@ self.addEventListener('activate', function(event) {
 var CACHE_NAME = 'app_serviceworker_v_1',
 // ссылки на кэшируемые файлы
     cacheUrls = [
+        'appCache.js',
         'index.html',
         'style.css',
         'common.js'
@@ -48,8 +49,8 @@ self.addEventListener('fetch', function(event) {
     );
 });
 
-// период обновления кэша - одни сутки
-var MAX_AGE = 1000;
+// период обновления кэша
+var MAX_AGE = 10000;
 
 self.addEventListener('fetch', function(event) {
 

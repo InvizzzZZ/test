@@ -96,7 +96,7 @@ function createQuestion(question) {  //функция, отрисовывающ�
     answer4.classList.add('answer');
     answer4.setAttribute('value', question.get('answer4') + "");
     answer4.setAttribute('answer_true', question.get('answer_true') + "");
-    // container.append(answer3);
+    // container.append(answer4);
 
     let answers = [answer1, answer2, answer3, answer4]; // массив ответов
     answers.sort(function () { // отсортированный рандомно массив ответов
@@ -147,21 +147,23 @@ function checkAnswer(EO) {
         } else {
             block = document.createElement('div');
             block.classList.add('block');
-            // block.style.paddingTop = '75px';
             block.style.fontSize = '30px';
-            block.style.lineHeight = 'initial';
             if (count === questions.length) {
-                block.textContent = `Игра окончена Ваш результат ${count} из ${questions.length}!
-                Вы молодец!`;
+                block.textContent = 'Игра окончена. Ваш результат ' + count + ' из ' + questions.length + '!';
+                let message = document.createElement('div');
+                message.textContent = 'Вы молодец!';
+                block.appendChild(message);
             } else {
-                block.textContent = `Игра окончена Ваш результат ${count} из ${questions.length}.
-                В следующий раз будет лучше`;
+                block.textContent = 'Игра окончена. Ваш результат ' + count + ' из ' + questions.length + '.';
+                let message = document.createElement('div');
+                message.textContent = 'В следующий раз точно будет лучше.';
+                block.appendChild(message);
             }
             container.append(block);
             let button = document.createElement('button');
             button.innerText = 'Попробовать снова';
             button.classList.add('button');
-            container.append(button);
+            container.appendChild(button);
 
             button.addEventListener('click', () => {
                 location.reload();
