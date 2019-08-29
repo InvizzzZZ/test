@@ -84,7 +84,7 @@ function createQuestion(question) {  //функция, отрисовывающ�
     answer3.setAttribute('answer_true', question.get('answer_true') + "");
     // container.append(answer3);
 
-    answers = [answer1, answer2, answer3]; // массив ответов
+    let answers = [answer1, answer2, answer3]; // массив ответов
     answers.sort(function () { // отсортированный рандомно массив ответов
         return Math.random() - 0.5;
     });
